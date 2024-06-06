@@ -6,7 +6,6 @@ from turtle import st
 import numpy as np
 import pandas as pd
 import plotly
-import plotly as plt
 import plotly.graph_objects as go
 
 from rsu.RSUModel import RSUModel

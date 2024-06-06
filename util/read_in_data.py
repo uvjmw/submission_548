@@ -5,14 +5,6 @@ import os
 import plotly.express as px
 import pandas as pd
 
-
-
-
-#TODO: auswahl für use-case
-#TODO: Abbiegemanöver aussuchen. Alle beteiligten szenarien für fahrzeuge extrahieren
-#TODO: Ampel bei szenario fixen
-#TODO: rausfinden welche signal group relevant ist
-
 class DataReader:
 
     def __init__(self, rd):
@@ -47,7 +39,6 @@ class DataReader:
             ampel_signal = self.df_ampel.loc[tracks[key].timestamp_ms.min() : tracks[key].timestamp_ms.max()]
             ampel_signal = ampel_signal[(ampel_signal['timestamp_ms'] >= tracks[key].timestamp_ms.min()) & (ampel_signal['timestamp_ms'] <= tracks[key].timestamp_ms.max())]
             ampel_signal = ampel_signal[ampel_signal['signal_group_id'] == 1]
-            #TODO: Fix indexing
             tracks[key]['ampel_signal'] = ampel_signal['movement_state']
 
         pass

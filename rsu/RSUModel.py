@@ -9,7 +9,6 @@ from scenariodatabase.ScenarioGetter import ScenarioGetter
 
 
 class RSUModel:
-    #TODO Signal state mit übergeben ?
 
     def __init__(self, signal, data_directory, radius: float = 20):
         self.localisation = RSULocalisation(signal=signal, radius=radius)

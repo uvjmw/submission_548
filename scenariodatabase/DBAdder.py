@@ -80,8 +80,6 @@ class ScenarioAdder:
         lane_end = [14, 2, 10, 13, 1, 9, 2, 6, 14, 1, 5, 13, 6, 10, 2, 5, 9, 1, 10,  14, 6, 9, 13, 5]
         rel_signal = [1, 1, 1, 1, 1, 1, 4, 4, 4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 2, 2, 2, 2]
 
-        #TODO relevant signal definition
-
         for i in range(len(lane_end)):
             routing = Routing(
                 start_lane=lane_start[i],
@@ -103,24 +101,6 @@ class ScenarioAdder:
                 signal_position_y=y_pos[i]
             )
             self.dbc.insert_object(signal)
-
-        """
-        csv_files_signals = [file for file in os.listdir(data_dir) if file.endswith(".csv") and "signal" in file]
-
-        ids = []
-        for file in csv_files_signals:
-            df = pd.read_csv(data_dir/file)
-            for uni in df['signal_group_id'].unique().tolist():
-                if uni not in ids:
-                    ids.append(uni)
-                    signal = Signal(
-                        signal_id=uni,
-                        signal_position_x=df[df['signal_group_id'] == uni].pos_x.min(),
-                        signal_position_y=df[df['signal_group_id'] == uni].pos_y.min()
-                    )
-                    self.dbc.insert_object(signal)
-            pass
-        """
 
 
 

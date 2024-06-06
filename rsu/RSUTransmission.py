@@ -12,8 +12,8 @@ class RSUTransmission:
         vru_located = False
 
         if not objects.empty: # Wenn objekte da sind wird geschaut ob sie erkannt werden und auch lokalisiert werden
-            if random() < 0.9: # 99% chance Objekte zu erkennen
-                if random() < 0.75: # 95% Chance objecte nach erkennung auch zu lokalisieren
+            if random() < 0.9: # 90% chance Objekte zu erkennen
+                if random() < 0.75: # 75% Chance objecte nach erkennung auch zu lokalisieren
                     vru_present = True
                     vru_located = True
                 else:

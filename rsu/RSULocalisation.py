@@ -9,7 +9,6 @@ class RSULocalisation:
 
     def locate_objects(self, scenario, objects):
         objects = objects
-        #TODO Position aus signal
         rsu_x = -20
         rsu_y = -20
 
